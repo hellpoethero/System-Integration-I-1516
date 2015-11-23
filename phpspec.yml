@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: THHT
+        psr4_prefix: THHT
         src_path: app
