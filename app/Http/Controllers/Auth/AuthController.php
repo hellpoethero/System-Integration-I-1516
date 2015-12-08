@@ -11,15 +11,15 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 class AuthController extends Controller
 {
 
-    protected $redirectPath='/dashboard';
+    protected $redirectPath='/health4all';
     protected $loginPath='/auth/login';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
+    | This controller handles the registration of new user, as well as the
+    | authentication of existing user. By default, this controller uses
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
@@ -46,7 +46,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:user',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -65,4 +65,6 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
 }

@@ -23,3 +23,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::get('dashboard', 'PageController@dashboard');
+Route::get('health4all', 'PageController@health4all');
+Route::get('openemr', 'PageController@openemr');

@@ -8,6 +8,7 @@
         <style>
             html, body {
                 height: 100%;
+                font-family: 'Open Sans', sans-serif;
             }
 
             body {
@@ -33,6 +34,10 @@
             .title {
                 font-size: 96px;
             }
+
+            .login {
+                font-family: 'Open Sans', sans-serif;
+            }
         </style>
     </head>
     <body>
@@ -41,5 +46,10 @@
                 <div class="title">Laravel 5</div>
             </div>
         </div>
+
+    <div class="login">
+        <a href="{{ URL::to('auth/login') }}">Đăng nhập</a>
+        <a href="{{ URL::to('auth/register') }}">Đăng ký</a>
+    </div>
     </body>
 </html>
