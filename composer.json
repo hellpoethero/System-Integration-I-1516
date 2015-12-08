@@ -19,7 +19,7 @@
             "database"
         ],
         "psr-4": {
-            "THHT\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

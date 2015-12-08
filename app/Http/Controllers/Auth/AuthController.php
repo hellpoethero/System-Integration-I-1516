@@ -1,15 +1,18 @@
 <?php
 
-namespace THHT\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use THHT\User;
+use App\User;
 use Validator;
-use THHT\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+
+    protected $redirectPath='/dashboard';
+    protected $loginPath='/auth/login';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        THHT\Providers\AppServiceProvider::class,
-        THHT\Providers\AuthServiceProvider::class,
-        THHT\Providers\EventServiceProvider::class,
-        THHT\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

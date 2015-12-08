@@ -15,12 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('contact', 'PagesController@contact');
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::get('about', 'PagesController@about');
-
-Route::get('/articles', 'ArticlesController@index');
-
-Route::get('user/{id}', 'UserController@show');
-
-Route::get('r/{id}', 'UserController@a');
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
