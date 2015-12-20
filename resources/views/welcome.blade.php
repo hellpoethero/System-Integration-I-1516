@@ -1,55 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.home')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('title', 'Đăng nhập')
 
-        <style>
-            html, body {
-                height: 100%;
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-
-            .login {
-                font-family: 'Open Sans', sans-serif;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-
-    <div class="login">
-        <a href="{{ URL::to('auth/login') }}">Đăng nhập</a>
-        <a href="{{ URL::to('auth/register') }}">Đăng ký</a>
+@section('content')
+    <div class="container" style="width:330px;">
+        <form action="/auth/login" method="post" accept-charset="utf-8" class="form-signin" role="form" id="form">
+            {!! csrf_field() !!}
+            <h2 class="form-signin-heading" align="center">Tài khoản</h2>
+            <input type="email" class="form-control" name="email" id="email" required autofocus><br />
+            <input type="password" class="form-control" name="password" id="password" required><br />
+            <div> <input type="checkbox" name="remember"> Ghi nhớ </div> <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng nhập</button><br>
+            <div align="center"><a href="/auth/register">Đăng ký</a></div>
+        </form>
     </div>
-    </body>
-</html>
+@endsection

@@ -24,6 +24,10 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('dashboard', 'PageController@dashboard');
+Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'PageController@dashboard']);
 Route::get('health4all', 'PageController@health4all');
 Route::get('openemr', 'PageController@openemr');
+
+//Route::get('staff/create', 'PatientController@create');
+
+Route::get('staff/create', ['middleware' => 'auth', 'uses' => 'StaffController@create']);
