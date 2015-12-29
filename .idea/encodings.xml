@@ -9,7 +9,17 @@
     <file url="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/page/dashboard.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/page/health4all.blade.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/resources/views/staff/create.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/patient/add.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/patient/add_inquiry.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/patient/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/patient/inquiry.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/patient/layout.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/staff/add_category.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/staff/add_role.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/staff/add_staff.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/staff/category.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/staff/role.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/staff/staff.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/welcome.blade.php" charset="UTF-8" />
   </component>
 </project>

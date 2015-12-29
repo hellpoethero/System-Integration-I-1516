@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Auth\AuthController@authenticate');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -28,6 +26,21 @@ Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'PageController@dashb
 Route::get('health4all', 'PageController@health4all');
 Route::get('openemr', 'PageController@openemr');
 
-//Route::get('staff/create', 'PatientController@create');
+Route::get('patient/create', ['middleware' => 'auth', 'uses' => 'PatientController@create']);
+Route::get('patient', ['middleware' => 'auth', 'uses' => 'PatientController@index']);
 
-Route::get('staff/create', ['middleware' => 'auth', 'uses' => 'StaffController@create']);
+Route::group(['middleware' => 'auth', 'prefix' => 'patient'], function() {
+    Route::get('', 'PatientController@index');
+    Route::get('add', 'PatientController@create');
+    Route::get('inquiry', 'PatientController@inquiry');
+    Route::get('inquiry/add', 'PatientController@add_inquiry');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'staff'], function() {
+    Route::get('', 'StaffController@index');
+    Route::get('add', 'StaffController@create');
+    Route::get('role', 'StaffController@role');
+    Route::get('role/add', 'StaffController@add_role');
+    Route::get('category', 'StaffController@category');
+    Route::get('category/add', 'StaffController@add_category');
+});

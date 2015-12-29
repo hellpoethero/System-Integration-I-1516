@@ -1,27 +1,3 @@
-{{--<!-- resources/views/auth/login.blade.php -->--}}
-
-{{--<form method="POST" action="/auth/login">--}}
-    {{--{!! csrf_field() !!}--}}
-
-    {{--<div>--}}
-        {{--Email--}}
-        {{--<input type="email" name="email" id="email">--}}
-    {{--</div>--}}
-
-    {{--<div>--}}
-        {{--Password--}}
-        {{--<input type="password" name="password" id="password">--}}
-    {{--</div>--}}
-
-    {{--<div>--}}
-        {{--<input type="checkbox" name="remember"> Ghi nhớ--}}
-    {{--</div>--}}
-
-    {{--<div>--}}
-        {{--<button type="submit">Đăng nhập</button>--}}
-    {{--</div>--}}
-{{--</form>--}}
-
 @extends('layouts.home')
 
 @section('title', 'Đăng nhập')
