@@ -24,7 +24,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'PageController@dashboard']);
 Route::get('health4all', 'PageController@health4all');
-Route::get('openemr', 'PageController@openemr');
+Route::get('chikitsa', 'PageController@chikitsa');
 
 Route::get('patient/create', ['middleware' => 'auth', 'uses' => 'PatientController@create']);
 Route::get('patient', ['middleware' => 'auth', 'uses' => 'PatientController@index']);
@@ -43,4 +43,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'staff'], function() {
     Route::get('role/add', 'StaffController@add_role');
     Route::get('category', 'StaffController@category');
     Route::get('category/add', 'StaffController@add_category');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'dicom'], function() {
+    Route::get('', 'DicomController@index');
+    Route::get('add', 'DicomController@create');
+    Route::get('{id}', 'DicomController@show');
 });

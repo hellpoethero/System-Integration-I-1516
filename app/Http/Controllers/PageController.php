@@ -93,7 +93,7 @@ class PageController extends Controller
         return view('page/health4all');
     }
 
-    public function openemr() {
-        return view('page/openemr');
+    public function chikitsa() {
+        return view('page/chikitsa');
     }
 }

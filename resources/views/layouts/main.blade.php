@@ -43,6 +43,9 @@
                     <li>
                         <a href="http://localhost:8000/patient"> Bệnh nhân </a>
                     </li>
+                    <li>
+                        <a href="http://localhost:8000/dicom"> DICOM </a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown  "><a href="" class="dropdown-toggle js-activated" data-toggle="dropdown">admin <b class="caret"></b></a>
