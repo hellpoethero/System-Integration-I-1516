@@ -51,3 +51,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dicom'], function() {
     Route::get('add', 'DicomController@create');
     Route::get('{id}', 'DicomController@show');
 });
+
+Route::get('test', 'DicomController@test');
+
+Route::get('0000', 'DicomController@data');

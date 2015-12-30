@@ -16,9 +16,8 @@
                             <tbody>
                             <?php foreach($data as $d) {
                                 echo '<tr>';
-                                echo '<td><center>',$d['id'],'</center></td>';
-
-                                echo '<td><center><a href="../../dicom/', $d['id'],'">',$d['created_at'],'</a></center></td>';
+                                echo '<td><center>',$d->{'id'},'</center></td>';
+                                echo '<td><center><a href="../../dicom/', $d->{'id'},'">',$d->{'created_at'},'</a></center></td>';
                                 echo '</tr>';
                             }?>
                             </tbody>
@@ -29,7 +28,8 @@
         </div>
     </div>
     <script>
-        //var data = JSON.parse('<?php echo json_encode("a")?>');
+        var data = JSON.parse('<?php echo json_encode($data)?>');
+        //document.write(data[0]['url']);
     </script>
 
 @endsection
