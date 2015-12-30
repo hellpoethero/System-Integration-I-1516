@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/resources/views/auth/login.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/auth/register.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/dicom/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/dicom/patient_dicom.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/layouts/home.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/page/dashboard.blade.php" charset="UTF-8" />

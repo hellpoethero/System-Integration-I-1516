@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'patient'], function() {
     Route::get('add', 'PatientController@create');
     Route::get('inquiry', 'PatientController@inquiry');
     Route::get('inquiry/add', 'PatientController@add_inquiry');
+    Route::get('/{id}/dicom', 'DicomController@patient_dicom');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'staff'], function() {

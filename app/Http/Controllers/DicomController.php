@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dicom;
+use App\Patient;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,13 +13,15 @@ class DicomController extends Controller
 {
     public function index()
     {
-        $data = Dicom::all();
-        return view('dicom/index')->with('data', $data);
+        return view('dicom/index');
     }
-    public function create()
-    {
 
+    public function patient_dicom($id)
+    {
+        $data = Dicom::all();
+        return view('dicom/patient_dicom')->with('data', $data);
     }
+
     public function store(Request $request)
     {
         //
@@ -27,6 +30,7 @@ class DicomController extends Controller
     {
         return view('dicom/show');
     }
+
     public function edit($id)
     {
         //

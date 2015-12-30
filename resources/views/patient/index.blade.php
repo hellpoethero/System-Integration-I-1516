@@ -30,7 +30,21 @@
                                         <thead>
                                         <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Id: activate to sort column ascending" style="width: 49px;">Id</th><th class="sorting" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 117px;">Name</th><th class="sorting" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-label="Display Name: activate to sort column ascending" style="width: 50px;">Display Name</th><th class="sorting" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-label="Phone Number: activate to sort column ascending" style="width: 95px;">Phone Number</th><th class="sorting" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-label="Reference By: activate to sort column ascending" style="width: 68px;">Reference By</th><th class="sorting" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-label="Visit: activate to sort column ascending" style="width: 42px;">Visit</th><th class="sorting" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-label="Follow Up: activate to sort column ascending" style="width: 123px;">Follow Up</th><th class="sorting" tabindex="0" aria-controls="patient_table" rowspan="1" colspan="1" aria-label="Delete: activate to sort column ascending" style="width: 55px;">Delete</th></tr>
                                         </thead>
-                                        <tbody></tbody>
+                                        <tbody>
+                                        <?php foreach($data as $d) {
+                                            echo '<tr>';
+                                            echo '<td><center>',$d['id'],'</center></td>';
+
+                                            echo '<td><a href="patient/',$d['id'],'/dicom">',$d['name'],'</a></td>';
+                                            echo '<td></td>';
+                                            echo '<td></td>';
+                                            echo '<td></td>';
+                                            echo '<td></td>';
+                                            echo '<td></td>';
+                                            echo '<td></td>';
+                                            echo '</tr>';
+                                        }?>
+                                        </tbody>
                                     </table><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="patient_table_info" role="alert" aria-live="polite" aria-relevant="all">Showing 1 to 1 of 1 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="patient_table_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="patient_table" tabindex="0" id="patient_table_previous"><a href="http://localhost/chikitsa/index.php/patient/index#">Previous</a></li><li class="paginate_button active" aria-controls="patient_table" tabindex="0"><a href="http://localhost/chikitsa/index.php/patient/index#">1</a></li><li class="paginate_button next disabled" aria-controls="patient_table" tabindex="0" id="patient_table_next"><a href="http://localhost/chikitsa/index.php/patient/index#">Next</a></li></ul></div></div></div></div>
                             </div>
                         </div>

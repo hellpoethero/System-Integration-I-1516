@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,7 +12,8 @@ class PatientController extends Controller
 {
     public function index()
     {
-        return view('patient/index');
+        $data = Patient::all();
+        return view('patient/index')->with('data', $data);
     }
 
     public function create()
