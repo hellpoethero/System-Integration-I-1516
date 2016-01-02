@@ -26,8 +26,8 @@
         </div>
     </div>
 
-
     <script>
+
 
         var data = JSON.parse('<?php echo json_encode($data)?>');
         var url=data['url'];

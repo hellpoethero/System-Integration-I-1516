@@ -22,40 +22,18 @@ class DicomController extends Controller
     public function patient_dicom($id)
     {
         $data = DB::table('dicom')->select()->where('patient_id','=', $id)->get();
-        //$a = Dicom::all();
-        //echo json_encode($data);
 
         return view('dicom/patient_dicom')->with('data', $data);
     }
 
-    public function store(Request $request)
-    {
-        //
-    }
     public function show($id)
     {
         $data = DB::table('dicom')->select()->where('id', $id, '=')->get();
-        return view('dicom/test')->with('data', $data[0]);
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        return view('dicom/show')->with('data', $data[0]);
     }
 
     public function test() {
         $data = DB::table('dicom')->select()->where('id', 1, '=')->get();
-        //echo json_encode($data[0]);
         return view('dicom/test')->with('data', $data[0]);
     }
 

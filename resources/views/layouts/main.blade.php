@@ -10,15 +10,6 @@
     <script type="text/javascript" src="{!! asset('js/jquery.min.js') !!}"></script>
     <script type="text/javascript" src="{!! asset('js/bootstrap.min.js') !!}"></script>
     <script type="text/javascript" src="{!! asset('js/jquery.chained.min.js') !!}"></script>
-    <script>
-        $(function () {
-            $('[data-toggle="popover"]').popover({trigger:'hover',html:true});
-            $("#unit").chained("#department");
-            $("#area").chained("#department");
-            $("body").css('padding-top',$(".container").height());
-            $("body").css('padding-bottom',$("#footer").height());
-        });
-    </script>
 </head>
 <body style="padding-top: 50px; padding-bottom: 25px;">
 <div id="wrap">
@@ -67,25 +58,6 @@
             @yield('sidebar')
         </div>
 
-        <link rel="stylesheet" href="{!! asset('css/metallic.css') !!}">
-        <script type="text/javascript" src="{!! asset('js/zebra_datepicker.js') !!}"></script>
-
-        <script type="text/javascript">
-            $(function(){
-                $("#date_of_birth").Zebra_DatePicker({direction:false});
-                $("#department option").hide().attr('disabled',true);
-                $("#hospital").on('change',function(){
-                    var hospital_id=$(this).val();
-                    $("#department option").hide().attr('disabled',true);
-                    $("#department option[class="+hospital_id+"]").show().attr('disabled',false);
-                });
-                $("#department").on('change',function(){
-                    var department_id=$(this).val();
-                    $("#unit option,#area option").hide();
-                    $("#unit option[class="+department_id+"],#area option[class="+department_id+"]").show();
-                });
-            });
-        </script>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 @yield('content')

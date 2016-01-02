@@ -2,6 +2,36 @@
 
 @section('content')
 
+    <script type="text/javascript">
+        $(function(){
+            $("#date_of_birth").Zebra_DatePicker({direction:false});
+            $("#department option").hide().attr('disabled',true);
+            $("#hospital").on('change',function(){
+                var hospital_id=$(this).val();
+                $("#department option").hide().attr('disabled',true);
+                $("#department option[class="+hospital_id+"]").show().attr('disabled',false);
+            });
+            $("#department").on('change',function(){
+                var department_id=$(this).val();
+                $("#unit option,#area option").hide();
+                $("#unit option[class="+department_id+"],#area option[class="+department_id+"]").show();
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover({trigger:'hover',html:true});
+            $("#unit").chained("#department");
+            $("#area").chained("#department");
+            $("body").css('padding-top',$(".container").height());
+            $("body").css('padding-bottom',$("#footer").height());
+        });
+    </script>
+
+    <script type="text/javascript" src="{!! asset('js/zebra_datepicker.js') !!}"></script>
+    <link rel="stylesheet" href="{!! asset('css/metallic.css') !!}">
+
     <div>
         <h3 align="center">Thêm nhân viên</h3>
         <br>
@@ -52,8 +82,8 @@
                 </div>
                 <div class="col-md-6">
                     <select class="form-control" id="hospital" name="hospital">
-                        <option value="">Hospital</option>
-                        <option value='1'>Rajiv Gandhi Institute of Medical Sciences</option>
+                        <option selected="selected" value="">Hospital</option>
+                        <option value="1">Rajiv Gandhi Institute of Medical Sciences</option>
                     </select>
                 </div>
             </div>
@@ -63,8 +93,44 @@
                 </div>
                 <div class="col-md-6">
                     <select class="form-control" id="department" name="department">
-                        <option value="" disabled="disabled" style="display: none;">Department</option>
-                        <option value="1" class="1" disabled="disabled" style="display: none;">Anatomy</option><option value="2" class="1" disabled="disabled" style="display: none;">Anesthesia</option><option value="35" class="1" disabled="disabled" style="display: none;">ART</option><option value="3" class="1" disabled="disabled" style="display: none;">BioChemistry</option><option value="4" class="1" disabled="disabled" style="display: none;">Blood Bank</option><option value="6" class="1" disabled="disabled" style="display: none;">Cardio-Thoracic Surgery</option><option value="5" class="1" disabled="disabled" style="display: none;">Cardiology</option><option value="7" class="1" disabled="disabled" style="display: none;">Casualty</option><option value="38" class="1" disabled="disabled" style="display: none;">Child Heart Care</option><option value="8" class="1" disabled="disabled" style="display: none;">Community Medicine</option><option value="9" class="1" disabled="disabled" style="display: none;">Dental</option><option value="10" class="1" disabled="disabled" style="display: none;">Dermatology</option><option value="11" class="1" disabled="disabled" style="display: none;">Endocrinology</option><option value="12" class="1" disabled="disabled" style="display: none;">ENT</option><option value="13" class="1" disabled="disabled" style="display: none;">Forensic  Medicine</option><option value="14" class="1" disabled="disabled" style="display: none;">Gastroenterology</option><option value="15" class="1" disabled="disabled" style="display: none;">General Medicine</option><option value="16" class="1" disabled="disabled" style="display: none;">General Surgery</option><option value="22" class="1" disabled="disabled" style="display: none;">Gynecology and Obstetrics</option><option value="17" class="1" disabled="disabled" style="display: none;">Hospital Administration</option><option value="36" class="1" disabled="disabled" style="display: none;">ICTC</option><option value="37" class="1" disabled="disabled" style="display: none;">Medical Records</option><option value="18" class="1" disabled="disabled" style="display: none;">MicroBiology</option><option value="19" class="1" disabled="disabled" style="display: none;">Nephrology</option><option value="20" class="1" disabled="disabled" style="display: none;">Neurology</option><option value="21" class="1" disabled="disabled" style="display: none;">Neurosurgery</option><option value="23" class="1" disabled="disabled" style="display: none;">Ophthalmology</option><option value="24" class="1" disabled="disabled" style="display: none;">Orthopedics</option><option value="25" class="1" disabled="disabled" style="display: none;">Pathology</option><option value="26" class="1" disabled="disabled" style="display: none;">Pediatric Surgery</option><option value="27" class="1" disabled="disabled" style="display: none;">Pediatrics</option><option value="28" class="1" disabled="disabled" style="display: none;">Pharmacology</option><option value="29" class="1" disabled="disabled" style="display: none;">Physiology</option><option value="30" class="1" disabled="disabled" style="display: none;">Plastic Surgery</option><option value="31" class="1" disabled="disabled" style="display: none;">Psychiatry</option><option value="32" class="1" disabled="disabled" style="display: none;">Radiology</option><option value="34" class="1" disabled="disabled" style="display: none;">TB&amp;CD</option><option value="33" class="1" disabled="disabled" style="display: none;">Urology</option>
+                        <option selected="selected" disabled="disabled" style="display: none;" value="">Department</option>
+                        <option disabled="disabled" style="display: none;" value="1" class="1">Anatomy</option>
+                        <option disabled="disabled" style="display: none;" value="2" class="1">Anesthesia</option>
+                        <option disabled="disabled" style="display: none;" value="35" class="1">ART</option>
+                        <option disabled="disabled" style="display: none;" value="3" class="1">BioChemistry</option>
+                        <option disabled="disabled" style="display: none;" value="4" class="1">Blood Bank</option>
+                        <option disabled="disabled" style="display: none;" value="6" class="1">Cardio-Thoracic Surgery</option><option disabled="disabled" style="display: none;" value="5" class="1">Cardiology</option>
+                        <option disabled="disabled" style="display: none;" value="7" class="1">Casualty</option>
+                        <option disabled="disabled" style="display: none;" value="38" class="1">Child Heart Care</option>
+                        <option disabled="disabled" style="display: none;" value="8" class="1">Community Medicine</option>
+                        <option disabled="disabled" style="display: none;" value="9" class="1">Dental</option>
+                        <option disabled="disabled" style="display: none;" value="10" class="1">Dermatology</option>
+                        <option disabled="disabled" style="display: none;" value="11" class="1">Endocrinology</option>
+                        <option disabled="disabled" style="display: none;" value="12" class="1">ENT</option>
+                        <option disabled="disabled" style="display: none;" value="13" class="1">Forensic  Medicine</option>
+                        <option disabled="disabled" style="display: none;" value="14" class="1">Gastroenterology</option>
+                        <option disabled="disabled" style="display: none;" value="15" class="1">General Medicine</option>
+                        <option disabled="disabled" style="display: none;" value="16" class="1">General Surgery</option>
+                        <option disabled="disabled" style="display: none;" value="22" class="1">Gynecology and Obstetrics</option>
+                        <option disabled="disabled" style="display: none;" value="17" class="1">Hospital Administration</option>
+                        <option disabled="disabled" style="display: none;" value="36" class="1">ICTC</option>
+                        <option disabled="disabled" style="display: none;" value="37" class="1">Medical Records</option>
+                        <option disabled="disabled" style="display: none;" value="18" class="1">MicroBiology</option>
+                        <option disabled="disabled" style="display: none;" value="19" class="1">Nephrology</option>
+                        <option disabled="disabled" style="display: none;" value="20" class="1">Neurology</option>
+                        <option disabled="disabled" style="display: none;" value="21" class="1">Neurosurgery</option>
+                        <option disabled="disabled" style="display: none;" value="23" class="1">Ophthalmology</option>
+                        <option disabled="disabled" style="display: none;" value="24" class="1">Orthopedics</option>
+                        <option disabled="disabled" style="display: none;" value="25" class="1">Pathology</option>
+                        <option disabled="disabled" style="display: none;" value="26" class="1">Pediatric Surgery</option>
+                        <option disabled="disabled" style="display: none;" value="27" class="1">Pediatrics</option>
+                        <option disabled="disabled" style="display: none;" value="28" class="1">Pharmacology</option>
+                        <option disabled="disabled" style="display: none;" value="29" class="1">Physiology</option>
+                        <option disabled="disabled" style="display: none;" value="30" class="1">Plastic Surgery</option>
+                        <option disabled="disabled" style="display: none;" value="31" class="1">Psychiatry</option>
+                        <option disabled="disabled" style="display: none;" value="32" class="1">Radiology</option>
+                        <option disabled="disabled" style="display: none;" value="34" class="1">TB&amp;CD</option>
+                        <option disabled="disabled" style="display: none;" value="33" class="1">Urology</option>
                     </select>
                 </div>
             </div>
@@ -73,9 +139,9 @@
                     <label for="unit" class="control-label">Unit</label>
                 </div>
                 <div class="col-md-6">
-                    <select class="form-control" id="unit" name="unit" disabled="">
-                        <option value="">Unit</option>
-                         </select>
+                    <select disabled="disabled" class="form-control" id="unit" name="unit">
+                        <option selected="selected" value="">Unit</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
@@ -83,9 +149,45 @@
                     <label for="area" class="control-label">Area</label>
                 </div>
                 <div class="col-md-6">
-                    <select class="form-control" id="area" name="area" disabled="">
-                        <option value="">Area</option>
-                        <option value='1' class='6'>CTRR</option><option value='2' class='6'>OTs Ward</option><option value='3' class='6'>AS Ward</option><option value='4' class='27'>SNCU/NICU</option><option value='5' class='27'>PICU</option><option value='6' class='27'>Step Down - PICU</option><option value='7' class='27'>NRC</option><option value='8' class='27'>Pediatric Ward</option><option value='9' class='22'>Labour Room</option><option value='10' class='22'>AnteNatal</option><option value='11' class='22'>PostNatal</option><option value='12' class='22'>Gynic Ward</option><option value='13' class='15'>Meco Ward</option><option value='14' class='15'>AMC</option><option value='15' class='15'>Male Medical Ward</option><option value='16' class='15'>Female Medical Ward</option><option value='17' class='16'>Male Surgical</option><option value='18' class='16'>Female Surgical</option><option value='19' class='7'>Male Burns</option><option value='20' class='7'>Female Burns</option><option value='21' class='19'>Male Nephrology</option><option value='22' class='19'>Female Nephrology</option><option value='23' class='20'>Male Nuerology</option><option value='24' class='20'>Female Nuerology</option><option value='25' class='21'>Male Nuero Surgery</option><option value='26' class='21'>Female Nuero Surgery</option><option value='27' class='5'>Male Cardiology</option><option value='28' class='5'>Female Cardiology</option><option value='29' class='5'>ICCU</option><option value='30' class='23'>Male Opthalmology</option><option value='31' class='23'>Female Opthalmology</option><option value='32' class='31'>Male Psychiatry</option><option value='33' class='31'>Female Psychiatry</option><option value='34' class='33'>Male Urology</option><option value='35' class='33'>Female Urology</option><option value='36' class='10'>Male Dermatalogy</option><option value='37' class='10'>Female Dermatalogy</option>
+                    <select disabled="disabled" class="form-control" id="area" name="area">
+                        <option value style="display: none;">Area</option>
+                        <option value="1" class="6" style="display: block;">CTRR</option>
+                        <option value="2" class="6" style="display: block;">OTs Ward</option>
+                        <option value="3" class="6" style="display: block;">AS Ward</option>
+                        <option value="4" class="27" style="display: block;">SNCU/NICU</option>
+                        <option value="5" class="27" style="display: block;">PICU</option>
+                        <option value="6" class="27" style="display: block;">Step Down - PICU</option>
+                        <option value="7" class="27" style="display: block;">NRC</option>
+                        <option value="8" class="27" style="display: block;">Pediatric Ward</option>
+                        <option value="9" class="22" style="display: block;">Labour Room</option>
+                        <option value="10" class="22" style="display: block;">AnteNatal</option>
+                        <option value="11" class="22" style="display: block;">PostNatal</option>
+                        <option value="12" class="22" style="display: block;">Gynic Ward</option>
+                        <option value="13" class="15" style="display: block;">Meco Ward</option>
+                        <option value="14" class="15" style="display: block;">AMC</option>
+                        <option value="15" class="15" style="display: block;">Male Medical Ward</option>
+                        <option value="16" class="15" style="display: block;">Female Medical Ward</option>
+                        <option value="17" class="16" style="display: block;">Male Surgical</option>
+                        <option value="18" class="16" style="display: block;">Female Surgical</option>
+                        <option value="19" class="7" style="display: block;">Male Burns</option>
+                        <option value="20" class="7" style="display: block;">Female Burns</option>
+                        <option value="21" class="19" style="display: block;">Male Nephrology</option>
+                        <option value="22" class="19" style="display: block;">Female Nephrology</option>
+                        <option value="23" class="20" style="display: block;">Male Nuerology</option>
+                        <option value="24" class="20" style="display: block;">Female Nuerology</option>
+                        <option value="25" class="21" style="display: block;">Male Nuero Surgery</option>
+                        <option value="26" class="21" style="display: block;">Female Nuero Surgery</option>
+                        <option value="27" class="5" style="display: block;">Male Cardiology</option>
+                        <option value="28" class="5" style="display: block;">Female Cardiology</option>
+                        <option value="29" class="5" style="display: block;">ICCU</option>
+                        <option value="30" class="23" style="display: block;">Male Opthalmology</option>
+                        <option value="31" class="23" style="display: block;">Female Opthalmology</option>
+                        <option value="32" class="31" style="display: block;">Male Psychiatry</option>
+                        <option value="33" class="31" style="display: block;">Female Psychiatry</option>
+                        <option value="34" class="33" style="display: block;">Male Urology</option>
+                        <option value="35" class="33" style="display: block;">Female Urology</option>
+                        <option value="36" class="10" style="display: block;">Male Dermatalogy</option>
+                        <option value="37" class="10" style="display: block;">Female Dermatalogy</option>
                     </select>
                 </div>
             </div>
@@ -96,7 +198,6 @@
                 <div class="col-md-6">
                     <select class="form-control" id="staff_role" name="staff_role">
                         <option value="">Staff Role</option>
-                        <option value="1">Bac si</option><option value="2">def</option>
                     </select>
                 </div>
             </div>
@@ -107,7 +208,6 @@
                 <div class="col-md-6">
                     <select class="form-control" id="staff_category" name="staff_category">
                         <option value="">Staff Category</option>
-                        <option value="1">abc</option>
                     </select>
                 </div>
             </div>
@@ -176,4 +276,31 @@
             </div>
         </form>
     </div>
+
+    <script>
+        var url = "http://localhost/health4all/getData";
+        var staff_role = document.getElementById('staff_role');
+        var staff_category = document.getElementById('staff_category');
+        var area = document.getElementById('area');
+
+        $.getJSON(url, function(data) {
+
+            var i;
+
+            for (i=0; i<data['staff_role'].length; i++) {
+                var option = document.createElement('option');
+                option.value = data['staff_role'][i]['staff_role_id'];
+                option.text = data['staff_role'][i]['staff_role'];
+                staff_role.add(option);
+            }
+
+            for (i=0; i<data['staff_category'].length; i++) {
+                var option = document.createElement('option');
+                option.value = data['staff_category'][i]['staff_category_id'];
+                option.text = data['staff_category'][i]['staff_category'];
+                staff_category.add(option);
+            }
+        });
+    </script>
+
 @endsection

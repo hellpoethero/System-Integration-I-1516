@@ -9,11 +9,6 @@ use App\Http\Controllers\Controller;
 
 class StaffController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('staff/staff');
